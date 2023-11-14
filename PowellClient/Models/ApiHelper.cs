@@ -7,15 +7,15 @@ namespace PowellClient.Models
   {
     public static async Task<string> GetAll()
     {
-      RestClient client = new RestClient("http://localhost:5000/");
-      RestRequest request = new RestRequest($"api/animals", Method.Get);
+      RestClient client = new RestClient("http://localhost:7099/");
+      RestRequest request = new RestRequest($"api/books", Method.Get);
       RestResponse response = await client.GetAsync(request);
       return response.Content;
     }
 
      public static async Task<string> Get(int id)
     {
-      RestClient client = new RestClient("http://localhost:5000/");
+      RestClient client = new RestClient("http://localhost:7099/");
       // may need to change
       RestRequest request = new RestRequest($"api/books/{id}", Method.Get);
       RestResponse response = await client.GetAsync(request);
@@ -24,7 +24,7 @@ namespace PowellClient.Models
 
      public static async void Post(string newBook)
     {
-      RestClient client = new RestClient("http://localhost:5000/");
+      RestClient client = new RestClient("http://localhost:7099/");
       // may need to change
       RestRequest request = new RestRequest($"api/books", Method.Post);
       request.AddHeader("Content-Type", "application/json");
@@ -34,7 +34,7 @@ namespace PowellClient.Models
 
     public static async void Put(int id, string newBook)
     {
-      RestClient client = new RestClient("http://localhost:5000/");
+      RestClient client = new RestClient("http://localhost:7099/");
       // may need to change
       RestRequest request = new RestRequest($"api/books/{id}", Method.Put);
       request.AddHeader("Content-Type", "application/json");
@@ -44,7 +44,7 @@ namespace PowellClient.Models
 
     public static async void Delete(int id)
     {
-      RestClient client = new RestClient("http://localhost:5000/");
+      RestClient client = new RestClient("http://localhost:7099/");
       RestRequest request = new RestRequest($"api/books/{id}", Method.Delete);
       request.AddHeader("Content-Type", "application/json");
       await client.DeleteAsync(request);

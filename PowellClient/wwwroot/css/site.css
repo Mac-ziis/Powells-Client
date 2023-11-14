@@ -15,4 +15,10 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: rebeccapurple;
 }
+
+div#figner {
+  text-align: center;
+}
+

@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h1>All Cretaceous Books</h1>
+
+<h3>Actions:</h3>
+
+<p>@Html.ActionLink("Add a new book to the database", "Create")</p>
+
+<h3>Books:</h3>
+<ol>
+@foreach (Book book in Model)
+{
+  <li><strong>@book.Title</strong> the @book.Author | <a href="/books/Details/@(book.BookId)">View Details</a></li>
+}
+</ol>

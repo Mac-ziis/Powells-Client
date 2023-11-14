@@ -11,6 +11,11 @@ public class BooksController : Controller
     return View(books);
   }
 
+  public IActionResult DONTCLICK()
+  {
+    return View();
+  }
+
   public IActionResult Details(int id)
   {
     Book book = Book.GetDetails(id);

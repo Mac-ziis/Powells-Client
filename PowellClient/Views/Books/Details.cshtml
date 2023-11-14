@@ -4,9 +4,9 @@
 
 <h1>All About @Model.Title</h1>
 
-<p>Species: @Model.Species</p>
-<p>Age: @Model.Age</p>
+<p>Species: @Model.Author</p>
+<p>Age: @Model.Summary</p>
 
-<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.AnimalId })</p>
-<p>@Html.ActionLink("Delete animal", "Delete", new { id = @Model.AnimalId })</p>
-@Html.ActionLink("Return to all animals", "Index")
+<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.BooklId })</p>
+<p>@Html.ActionLink("Delete book", "Delete", new { id = @Model.BookId })</p>
+@Html.ActionLink("Return to all books", "Index")

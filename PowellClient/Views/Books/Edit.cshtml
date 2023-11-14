@@ -1,0 +1,26 @@
+@{
+  ViewData["Title"] = $"Edit {Model.Title}";
+}
+
+@model PowellClient.Models.Book
+
+<h4>Edit @Model.Title</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.BookId)
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title, new { @Value = Model.Title})
+  <br>
+  @Html.LabelFor(model => model.Author)
+  @Html.TextBoxFor(model => model.Author, new { @Value = Model.Author})
+  <br>
+  @Html.LabelFor(model => model.Summary)
+  @Html.TextBoxFor(model => model.Summary, new { Value = Model.Summary})
+  <br>
+  <br>
+  <input type="submit" value="Edit book" class="btn btn-primary"/>
+}
+
+<br>
+<p>@Html.ActionLink("Back to details", "Details", new {id = @Model.BookId})</p>
