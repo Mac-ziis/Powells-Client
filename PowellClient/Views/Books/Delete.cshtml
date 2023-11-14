@@ -1,0 +1,14 @@
+@{
+  ViewData["Title"] = $"Delete {Model.Title}";
+}
+
+@model PowellClient.Models.Book
+
+<h4>Are you sure you want to delete @Model.Title?</h4>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" class="btn btn-primary"/>
+}
+
+@Html.ActionLink("Back to details", "Details", new { id = @Model.BookId})

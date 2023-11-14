@@ -1,0 +1,25 @@
+@{
+  ViewData["Title"] = "Book";
+}
+
+@model PowellClient.Models.Book
+
+<h4>Add a new book to the database</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title)
+  <br />
+  @Html.LabelFor(model => model.Author)
+  @Html.TextBoxFor(model => model.Author)
+  <br />
+  @Html.LabelFor(model => model.Summary)
+  @Html.TextBoxFor(model => model.Summary)
+  <br />
+  <br />
+  <input type="submit" value="Add new book" class="btn btn-primary"/>
+}
+
+<br />
+<p>@Html.ActionLink("Back to all books", "Index")</p>
