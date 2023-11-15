@@ -4,16 +4,19 @@
 
 @using PowellClient.Models;
 
-<h1>All Cretaceous Books</h1>
+<h1>All Powell Books</h1>
 
 <h3>Actions:</h3>
 
-<p>@Html.ActionLink("Add a new book to the database", "Create")</p>
+<p>@Html.ActionLink("Add a new book to the bookcase", "Create")</p>
 
 <h3>Books:</h3>
-<ol>
+
+<div class="listbody">
+<ul class="listul">
 @foreach (Book book in Model)
 {
-  <li><strong>@book.Title</strong> the @book.Author | <a href="/books/Details/@(book.BookId)">View Details</a></li>
+  <li><strong>@book.Title</strong> by @book.Author | <a href="/books/Details/@(book.BookId)">View Details</a></li>
 }
-</ol>
+</ul>
+</div>
