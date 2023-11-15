@@ -10,7 +10,7 @@ namespace PowellClient.Models
     public int BookId { get; set; }
     public string Title { get; set; }
     public string Author { get; set; }
-    public int Summary { get; set; }
+    public string Summary { get; set; }
 
     public static List<Book> GetBooks()
     {
@@ -18,15 +18,15 @@ namespace PowellClient.Models
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-      List<Book> bookList = JsonConvert.DeserializeObject<List<Book>>(jsonResponse.ToString());
+      List<Book> books = JsonConvert.DeserializeObject<List<Book>>(jsonResponse.ToString());
 
-      return bookList;
+      return books;
     }
 
      public static Book GetDetails(int id)
     {
-      var apiCallTask = ApiHelper.Get(id);
-      var result = apiCallTask.Result;
+      Task<string> apiCallTask = ApiHelper.Get(id);
+      string result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
       Book book = JsonConvert.DeserializeObject<Book>(jsonResponse.ToString());

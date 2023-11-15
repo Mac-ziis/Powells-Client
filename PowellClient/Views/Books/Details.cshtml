@@ -2,11 +2,11 @@
   ViewData["Title"] = $"Details for {Model.Title}";
 }
 
-<h1>All About @Model.Title</h1>
+<h1>@Model.Title</h1>
 
-<p>Species: @Model.Author</p>
-<p>Age: @Model.Summary</p>
+<p>Author: @Model.Author</p>
+<p>Summary: @Model.Summary</p>
 
-<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.BooklId })</p>
+<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.BookId })</p>
 <p>@Html.ActionLink("Delete book", "Delete", new { id = @Model.BookId })</p>
 @Html.ActionLink("Return to all books", "Index")
